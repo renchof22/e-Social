@@ -1,11 +1,11 @@
 from django import forms
-from .models import Player, Clan
+from .models import Player, Team
 
 
 class ClanForm(forms.ModelForm):
     class Meta:
-        model = Clan
-        fields = ("clan_name", "clan_tag", 'clan_agenda')
+        model = Team
+        fields = ("name", "tag", 'agenda')
 
 
 class PlayerForm(forms.ModelForm):

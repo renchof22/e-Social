@@ -1,6 +1,6 @@
 from django.views.generic import CreateView, UpdateView
 from django.http import HttpResponse
-from .models import Player, Clan
+from .models import Player, Team
 from .forms import PlayerForm, ClanForm, PlayerUpdateForm
 from django.views import generic
 from django.contrib.auth import get_user_model
@@ -20,7 +20,7 @@ class PlayerCreateView(CreateView):
 
 
 class ClanCreateView(CreateView):
-    model = Clan
+    model = Team
     form_class = ClanForm
     template_name = "app1/clan_create.html"
     success_url = "/user"  # 成功時にリダイレクトするURL

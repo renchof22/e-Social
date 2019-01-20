@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Player, Clan
+from .models import Player, Team
 
 # Register your models here.
 admin.site.register(Player)
-admin.site.register(Clan)
+admin.site.register(Team)

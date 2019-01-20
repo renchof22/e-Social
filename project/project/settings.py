@@ -39,13 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'twitterManager.apps.TwittermanagerConfig',
-    'social_django',
     'app1',
     'accounts.apps.AccountsConfig',
     'widget_tweaks',
     'tournament'
 ]
+# 'twitterManager.apps.TwittermanagerConfig',
+# social_django
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -70,13 +70,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'social_django.context_processors.backends',
-                'social_django.context_processors.login_redirect',
 
             ],
         },
     },
 ]
+
+#                 'social_django.context_processors.backends',
+#                 'social_django.context_processors.login_redirect',
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
@@ -136,16 +137,16 @@ STATICFILES_DIRS = [
 # 認証処理をカスタマイズする仕組み。リストの先頭から順に認証を試みる
 # 1つが失敗したら次の認証を試みて、すべて失敗すると認証失敗になる
 
-AUTHENTICATION_BACKENDS = [
-    'social_core.backends.twitter.TwitterOAuth',
-    'django.contrib.auth.backends.ModelBackend',
-]
+# AUTHENTICATION_BACKENDS = [
+#    'social_core.backends.twitter.TwitterOAuth',
+#    'django.contrib.auth.backends.ModelBackend',
+#]
 
 SOCIAL_AUTH_TWITTER_KEY = twitter.SOCIAL_AUTH_TWITTER_KEY
 SOCIAL_AUTH_TWITTER_SECRET = twitter.SOCIAL_AUTH_TWITTER_SECRET
 
-LOGIN_REDIRECT_URL = '/user/mypage'
-LOGIN_URL = '/login/'
+# LOGIN_REDIRECT_URL = '/user/mypage'
+# LOGIN_URL = '/login/'
 
 # 画像ファイルのパスのルート用
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

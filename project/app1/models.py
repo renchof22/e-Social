@@ -12,15 +12,15 @@ CLAN_AUTHORITY = (
 
 
 # Create your models here.
-class Clan(models.Model):
-    clan_name = models.CharField(max_length=255)
-    clan_tag = models.CharField(max_length=5)
-    clan_agenda = models.CharField(max_length=255)
+class Team(models.Model):
+    name = models.CharField(max_length=255)
+    tag = models.CharField(max_length=5)
+    agenda = models.CharField(max_length=255)
     # upload_toで指定するパスは内部的にMEDIA_ROOTと結合される
     # clan_image = models.ImageField(upload_to='app1')
 
     def __str__(self):
-        return self.clan_name
+        return self.name
 
 
 class Player(models.Model):
@@ -31,7 +31,7 @@ class Player(models.Model):
     # フォームでの入力は任意、データベースにはnullが保存される
     psn_id = models.CharField(blank=True, null=False, max_length=30)
     # 所属しているクラン
-    belong_clan = models.ForeignKey(Clan, on_delete=models.SET_NULL, null=True)
+    belong_clan = models.ForeignKey(Team, on_delete=models.SET_NULL, null=True)
     # クラン内での権利 1:クランマスター 2:副マスター 3:メンバー
     belong_clan_authority = models.IntegerField(choices=CLAN_AUTHORITY, default=1)
 
