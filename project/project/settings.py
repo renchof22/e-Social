@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'social_django',
     'app1',
     'accounts.apps.AccountsConfig',
-    'widget_tweaks'
+    'widget_tweaks',
+    'tournament'
 ]
 
 MIDDLEWARE = [

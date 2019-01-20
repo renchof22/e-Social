@@ -21,7 +21,10 @@ from django.conf.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from tournament import views
+
 urlpatterns = [
+    path('', views.home, name='home'),
     path('admin/', admin.site.urls),
     path('auth/', include('twitterManager.urls')),
     path('user/', include('app1.urls')),
